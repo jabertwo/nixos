@@ -20,8 +20,8 @@
           nixos-hardware.nixosModules.framework-13-7040-amd
           ./configuration.nix
           ./hardware-configuration.nix
-          ./shared/base.nix
-          #./users/jabertwo.nix
+          ./utils/base.nix
+          ./users/jabertwo.nix
         ];
       };
     };
