@@ -13,19 +13,16 @@
 
   outputs = { self, nixpkgs, nixos-hardware, ... }: {
     # Define a NixOS configuration named after your hostname
-    nixosConfigurations.jabertwo-fw13 = nixpkgs.lib.nixosSystem {
-      # Define the system architecture
-      system = "x86_64-linux"; # Use "aarch64-linux" for ARM
-
-      # The list of modules to build your system
-      modules = [
-        # Import the Framework module
-        nixos-hardware.nixosModules.framework-13-7040-amd
-
-        # Import original configuration files
-        ./configuration.nix
-        ./hardware-configuration.nix
-      ];
+    nixosConfigurations = {
+      jabertwo-fw13 = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          nixos-hardware.nixosModules.framework-13-7040-amd
+          ./configuration.nix
+          ./hardware-configuration.nix
+          ./users/jabertwo.nix
+        ];
+      };
     };
   };
 }
