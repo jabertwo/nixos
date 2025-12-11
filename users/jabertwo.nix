@@ -33,6 +33,9 @@
         };
       };
     };
+    programs.element-desktop = {
+      enable = true;
+    };
     dconf = {
       enable = true;
       settings = {
