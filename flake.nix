@@ -21,6 +21,7 @@
           ./configuration.nix
           ./hardware-configuration.nix
           ./utils/base.nix
+          ./utils/yubikey.nix
           ./users/jabertwo.nix
         ];
       };
