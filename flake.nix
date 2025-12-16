@@ -17,11 +17,13 @@
       jabertwo-fw13 = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          nixos-hardware.nixosModules.framework-13-7040-amd
           ./configuration.nix
           ./hardware-configuration.nix
+          ./systems/fw-13.nix
           ./utils/base.nix
           ./utils/yubikey.nix
+          ./utils/gnome.nix
+          ./utils/packages.nix
           ./users/jabertwo.nix
         ];
       };
