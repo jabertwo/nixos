@@ -1,5 +1,5 @@
 { config, pkgs, ... }:
 
 {
-  program.discord.enable = true;
+  programs.discord.enable = true;
 }
