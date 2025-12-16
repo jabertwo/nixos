@@ -28,7 +28,10 @@
           ./utils/base.nix
           ./utils/yubikey.nix
           ./utils/gnome.nix
-          ./users/jabertwo.nix#
+
+          ./users/jabertwo.nix
+
+          ./programs/steam.nix
 
           home-manager.nixosModules.home-manager
           {
