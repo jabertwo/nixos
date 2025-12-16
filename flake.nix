@@ -18,7 +18,7 @@
         system = "x86_64-linux";
         modules = [
           ./configuration.nix
-          ./hardware-configuration.nix
+          ./systems/fw13-hardware.nix
           ./systems/fw-13.nix
           ./utils/base.nix
           ./utils/yubikey.nix
