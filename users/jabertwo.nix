@@ -36,6 +36,7 @@
     programs.element-desktop = {
       enable = true;
     };
+    programs.discord.enable = true;
     dconf = {
       enable = true;
       settings = {

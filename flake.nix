@@ -24,7 +24,7 @@
         system = "x86_64-linux";
         modules = [
           ./systems/fw13-hardware.nix
-          ./systems/fw-13.nix
+          ./systems/fw13.nix
           ./utils/base.nix
           ./utils/yubikey.nix
           ./utils/gnome.nix
@@ -32,8 +32,29 @@
           ./users/jabertwo.nix
 
           ./programs/steam.nix
-          ./programs/discord.nix
+          
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+          }
 
+        ];
+      };
+      jabertwo-zen = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs nixos-hardware; };
+        system = "x86_64-linux";
+        modules = [
+          ./systems/zen-hardware.nix
+          ./systems/zen.nix
+          ./utils/base.nix
+          ./utils/yubikey.nix
+          ./utils/gnome.nix
+
+          ./users/jabertwo.nix
+
+          ./programs/steam.nix
+          
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
