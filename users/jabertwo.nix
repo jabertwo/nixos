@@ -55,4 +55,7 @@
       };
     };
   };
+
+  # Make vim the default editor
+  environment.variables.EDITOR = "vim";
 }

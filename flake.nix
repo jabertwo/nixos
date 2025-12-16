@@ -1,7 +1,7 @@
 # /etc/nixos/flake.nix
 
 {
-  description = "NixOS configuration for Framework 13 (AMD 7040)";
+  description = "jabertwo's NixOS configuration";
 
   inputs = {
     # nixpkgs stable
@@ -9,21 +9,25 @@
 
     # hardware configuration
     nixos-hardware.url = "github:NixOS/nixos-hardware";
+
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, nixos-hardware, ... }: {
+  outputs = { self, nixpkgs, home-manager, nixos-hardware, ... }@inputs: {
     # Define a NixOS configuration named after your hostname
     nixosConfigurations = {
       jabertwo-fw13 = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs nixos-hardware; };
         system = "x86_64-linux";
         modules = [
-          ./configuration.nix
           ./systems/fw13-hardware.nix
           ./systems/fw-13.nix
           ./utils/base.nix
           ./utils/yubikey.nix
           ./utils/gnome.nix
-          ./utils/packages.nix
           ./users/jabertwo.nix
         ];
       };

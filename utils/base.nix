@@ -1,5 +1,8 @@
 { config, pkgs, ... }:
 {
+  # Use latest kernel.
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+
   system.autoUpgrade = {
     enable = true;
     operation = "boot";
@@ -23,6 +26,35 @@
   # home manager
   home-manager.useGlobalPkgs = true;
 
+  # Enable networking
+  networking.networkmanager.enable = true;
+
+  
+  
+  # List packages installed in system profile. To search, run:
+  # $ nix search wget
+  environment.systemPackages = with pkgs; [
+    vim
+    wget
+    git
+    whois
+    bind
+    usbutils
+  ];
+
+  # Enable sound with pipewire.
+  services.pulseaudio.enable = false;
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+  };
+
+  # Install firefox.
+  programs.firefox.enable = true;
+
   # Set your time zone.
   time.timeZone = "Europe/Berlin";
 
@@ -40,10 +72,10 @@
     LC_TELEPHONE = "de_DE.UTF-8";
     LC_TIME = "de_DE.UTF-8";
   };
- 
- 
- 
- 
+
+  # Configure console keymap
+  console.keyMap = "de";
+  
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave

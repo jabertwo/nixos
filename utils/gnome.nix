@@ -27,4 +27,7 @@
     gnome-tour
     totem
   ]);
+
+  # Install dconf
+  programs.dconf.enable = true;
 }
