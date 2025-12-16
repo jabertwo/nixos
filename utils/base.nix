@@ -3,12 +3,6 @@
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  system.autoUpgrade = {
-    enable = true;
-    operation = "boot";
-    dates = "hourly";
-    allowReboot = false;
-  };
   # Garbage collection 
   nix.settings.auto-optimise-store = true;
   nix.gc = { 
@@ -22,9 +16,6 @@
 
   # Enable the Flakes feature and the accompanying new nix command-line tool
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-  # home manager
-  home-manager.useGlobalPkgs = true;
 
   # Enable networking
   networking.networkmanager.enable = true;

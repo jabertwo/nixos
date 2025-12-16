@@ -5,7 +5,7 @@
     description = "jabertwo";
     extraGroups = [ "networkmanager" "wheel" ];
   };
-  home-manager.users.jabertwo = {
+  home-manager.users.jabertwo = { pkgs, ...}: {
     home.stateVersion = "25.11";
     home.packages = [
       pkgs.gnomeExtensions.ddterm

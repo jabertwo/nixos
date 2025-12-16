@@ -28,7 +28,14 @@
           ./utils/base.nix
           ./utils/yubikey.nix
           ./utils/gnome.nix
-          ./users/jabertwo.nix
+          ./users/jabertwo.nix#
+
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+          }
+
         ];
       };
     };
