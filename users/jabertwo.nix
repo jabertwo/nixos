@@ -15,7 +15,6 @@
     home.packages = [
       pkgs.gnomeExtensions.ddterm
       pkgs.gnomeExtensions.dash-to-dock
-      pkgs.element-desktop
       pkgs.vscodium
     ];
     programs.git = {

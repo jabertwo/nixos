@@ -30,9 +30,6 @@
           ./utils/gnome.nix
 
           ./users/jabertwo.nix
-
-          ./programs/steam.nix
-          
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;

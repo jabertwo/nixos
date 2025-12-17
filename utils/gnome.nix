@@ -6,27 +6,23 @@
   # Enable the GNOME Desktop Environment.
   services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
+  services.gnome.games.enable = false;
+  services.gnome.core-apps.enable = false;
   services.gnome.gcr-ssh-agent.enable = false;
+  environment.gnome.excludePackages =
+    (with pkgs; [ gnome-tour ]);
+    
+  # Install needed programs
+  environment.systemPackages = [
+    pkgs.nautilus
+    pkgs.gnome-terminal
+  ];
  
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "de";
     variant = "";
   };
-
-
-  # remove unnecesary gnome packages
-  environment.gnome.excludePackages = (with pkgs; [
-    cheese # webcam tool
-    epiphany # web browser
-    evince # document viewer
-    geary # email reader
-    gnome-characters
-    gnome-music
-    gnome-photos
-    gnome-tour
-    totem
-  ]);
 
   # Install dconf
   programs.dconf.enable = true;
