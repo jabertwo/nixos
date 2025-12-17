@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 {
   imports = [
-    ./programs/dconf.nix
+    ../programs/gnome-settings.nix
   ];
 
   users.users.jabertwo = {
