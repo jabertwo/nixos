@@ -1,10 +1,15 @@
 { config, pkgs, ... }:
 {
+  imports = [
+    ./programs/dconf.nix
+  ];
+
   users.users.jabertwo = {
     isNormalUser = true;
     description = "jabertwo";
     extraGroups = [ "networkmanager" "wheel" ];
   };
+
   home-manager.users.jabertwo = { pkgs, ...}: {
     home.stateVersion = "25.11";
     home.packages = [
@@ -35,25 +40,6 @@
     };
     programs.element-desktop = {
       enable = true;
-    };
-    programs.discord.enable = true;
-    dconf = {
-      enable = true;
-      settings = {
-        "org/gnome/shell" = {
-          disable-user-extensions = false;
-          enabled-extensions = with pkgs.gnomeExtensions; [
-            ddterm.extensionUuid
-            dash-to-dock.extensionUuid
-          ];
-        };
-        "org/gnome/desktop/wm/preferences" = {
-          "button-layout" = ":minimize,maximize,close";
-        };
-        "org/gnome/desktop/interface" = {
-          color-scheme = "prefer-dark";
-        };
-      };
     };
   };
 

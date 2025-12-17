@@ -20,5 +20,8 @@
     winetricks
 
   ];
-  
+  home-manager.users.jabertwo = {
+    # We move the discord and element settings here
+    programs.discord.enable = true;
+  };
 }
