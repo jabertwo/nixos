@@ -4,6 +4,10 @@
     ../programs/gnome-settings.nix
   ];
 
+  environment.systemPackages = [
+    pkgs.telegram-desktop
+  ];
+
   users.users.jabertwo = {
     isNormalUser = true;
     description = "jabertwo";
