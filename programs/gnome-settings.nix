@@ -93,8 +93,6 @@
           move-to-workspace-right = [];
           move-to-workspace-up = [];
           panel-run-dialog = ["<Alt>F2"];
-          switch-applications = ["<Alt>Tab"];
-          switch-applications-backward = ["<Shift><Alt>Tab"];
           switch-group = [];
           switch-group-backward = [];
           switch-input-source = [];
@@ -107,6 +105,8 @@
           switch-to-workspace-left = ["<Control><Super>Left"];
           switch-to-workspace-right = ["<Control><Super>Right"];
           switch-to-workspace-up = [];
+          switch-windows = ["<Alt>Tab"];
+          switch-windows-backward = ["<Shift><Alt>Tab"];
           toggle-maximized = [];
           unmaximize = [];
         };
@@ -119,6 +119,9 @@
           magnifier-zoom-out = [];
           screenreader = [];
           screensaver=["<Super>l"];
+        };
+        "org/gnome/mutter" = {
+          workspaces-only-on-primary=false;
         };
       };
     };
