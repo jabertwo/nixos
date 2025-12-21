@@ -117,7 +117,7 @@
           magnifier-zoom-in = [];
           magnifier-zoom-out = [];
           screenreader = [];
-          screensaver = [];
+          screensaver=["<Super>l"];
         };
       };
     };
