@@ -2,6 +2,7 @@
 {
   imports = [
     ../programs/gnome-settings.nix
+    ../programs/zsh.nix
   ];
 
   environment.systemPackages = [
