@@ -1,9 +1,6 @@
 { pkgs, ... }:
 {
   home-manager.users.jabertwo = {
-    home.packages = [
-      pkgs.oh-my-zsh
-    ];
     programs.zsh = {
       enable = true;
       shellAliases = {
@@ -15,12 +12,24 @@
         ls="ls --color=tty";
         bc="bc -l";
       };
-    };
 
-    oh-my-zsh = {
-      enable = true;
-      plugins = [ nmap man safe-paste sudo systemd ];
-      theme = "candy";
+      initContent = ''
+        if [ -z "$TMUX" ] && [ -n "$PS1" ] && [ "$TERM" != "screen-256color" ] && [ "$TERM" != "screen" ]; then
+          tmux attach -t main || tmux new -s main
+        fi
+      '';
+
+      oh-my-zsh = {
+        enable = true;
+        plugins = [ 
+          "nmap"
+          "man"
+          "safe-paste"
+          "sudo"
+          "systemd"
+        ];
+        theme = "candy";
+      };
     };
   };
 }

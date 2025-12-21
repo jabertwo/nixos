@@ -13,9 +13,15 @@
     isNormalUser = true;
     description = "jabertwo";
     extraGroups = [ "networkmanager" "wheel" ];
+    shell = pkgs.zsh;
   };
 
+  programs.zsh.enable = true;
+
   home-manager.users.jabertwo = { pkgs, ...}: {
+    imports = [ 
+      ../programs/tmux/tmux.nix
+    ];
     home.stateVersion = "25.11";
     home.packages = [
       pkgs.gnomeExtensions.ddterm

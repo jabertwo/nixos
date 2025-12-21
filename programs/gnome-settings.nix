@@ -54,8 +54,9 @@
           shortcut-win-new-tab = [];
           shortcut-window-size-dec = [];
           shortcut-window-size-inc = [];
+          tab-policy="never";
           window-maximize = false;
-          window-size = 0.59986413043478259;
+          window-size = 0.5;
         };
         "org/gnome/shell/extensions/dash-to-dock" = {
           background-opacity = 0.80000000000000004;
