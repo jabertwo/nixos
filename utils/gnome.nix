@@ -16,6 +16,7 @@
   environment.systemPackages = [
     pkgs.nautilus
     pkgs.gnome-terminal
+    pkgs.gnome-text-editor
   ];
  
   # Configure keymap in X11
