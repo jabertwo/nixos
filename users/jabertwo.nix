@@ -3,6 +3,7 @@
   imports = [
     ../programs/gnome-settings.nix
     ../programs/zsh.nix
+    ../programs/forticlient.nix
   ];
 
   environment.systemPackages = [
