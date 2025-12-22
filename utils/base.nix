@@ -8,7 +8,7 @@
   nix.gc = { 
     automatic = true;
     dates = "hourly";
-    options = "--delete-older-than +10";
+    options = "--delete-older-than 7d";
   };
   
   # Allow unfree packages
