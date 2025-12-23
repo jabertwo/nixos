@@ -4,6 +4,12 @@
     nixos-hardware.nixosModules.framework-13-7040-amd
   ];
 
+  # Use Systemd-Boot
+  #  boot.loader.systemd-boot = { 
+  #    enable = true;
+  #    editor = false;
+  #    consoleMode = "max";
+  #  };
 
   # Bootloader Settimgs
   boot.loader.efi.canTouchEfiVariables = true;
