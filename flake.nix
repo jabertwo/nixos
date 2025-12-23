@@ -10,13 +10,18 @@
     # hardware configuration
     nixos-hardware.url = "github:NixOS/nixos-hardware";
 
+    lanzaboote = {
+      url = "github:nix-community/lanzaboote/v1.0.0";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, nixos-hardware, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, nixos-hardware, lanzaboote, ... }@inputs: {
     # Define a NixOS configuration named after your hostname
     nixosConfigurations = {
       jabertwo-fw13 = nixpkgs.lib.nixosSystem {
@@ -30,6 +35,7 @@
           ./utils/gnome.nix
 
           ./users/jabertwo.nix
+
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;

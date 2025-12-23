@@ -17,6 +17,9 @@
       allowDiscards = true;
     };
   };
+  boot.initrd.systemd.enable = true;
+  boot.initrd.optimizeUnits = true;
+  boot.initrd.includeDefaultModules = false;
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
