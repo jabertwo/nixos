@@ -4,30 +4,48 @@
 { config, lib, pkgs, modulesPath, ... }:
 
 {
-  imports = [ 
-    (
-      modulesPath + "/installer/scan/not-detected.nix"
-    )
-  ];
+  imports =
+    [ (modulesPath + "/installer/scan/not-detected.nix")
+    ];
 
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "thunderbolt" "usb_storage" "sd_mod" ];
-  boot.initrd.kernelModules = [ ];
+  boot.initrd.kernelModules = [ "dm-snapshot" ];
+  boot.initrd.luks.devices = {
+    luksroot = {
+      device = "/dev/disk/by-uuid/6ecbb1b9-876e-43d7-bbd4-35173b0800a0";
+      preLVM = true;
+      allowDiscards = true;
+    };
+  };
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/4e7d6fe5-ddd1-4feb-a305-034c62f49b81";
-      fsType = "ext4";
+    { device = "/dev/mapper/vg-root";
+      fsType = "btrfs";
+      options = [ "subvol=root" "compress=zstd" ];
+    };
+
+  fileSystems."/home" =
+    { device = "/dev/mapper/vg-root";
+      fsType = "btrfs";
+      options = [ "subvol=home" "compress=zstd" ];
+    };
+
+  fileSystems."/nix" =
+    { device = "/dev/mapper/vg-root";
+      fsType = "btrfs";
+      options = [ "subvol=nix" "compress=zstd" "noatime" ];
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/F6F4-4176";
+    { device = "/dev/disk/by-uuid/54CA-A672";
       fsType = "vfat";
       options = [ "fmask=0077" "dmask=0077" ];
     };
 
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/33b82208-bd9d-4bfb-8fd4-4d4f91996701"; }
+    [ { device = "/dev/mapper/vg-swap"; }
     ];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
