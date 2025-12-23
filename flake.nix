@@ -31,6 +31,9 @@
           ./systems/fw13-hardware.nix
           ./systems/fw13.nix
           ./utils/base.nix
+          ./utils/secureboot.nix
+          ./utils/silentboot.nix
+          ./utils/secureboot.nix
           ./utils/yubikey.nix
           ./utils/gnome.nix
 

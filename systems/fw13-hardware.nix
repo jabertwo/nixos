@@ -9,7 +9,7 @@
     ];
 
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "thunderbolt" "usb_storage" "sd_mod" ];
-  boot.initrd.kernelModules = [ "dm-snapshot" ];
+  boot.initrd.kernelModules = [ "dm-snapshot" "amdgpu" ];
   boot.initrd.luks.devices = {
     luksroot = {
       device = "/dev/disk/by-uuid/6ecbb1b9-876e-43d7-bbd4-35173b0800a0";
@@ -18,7 +18,6 @@
     };
   };
   boot.initrd.systemd.enable = true;
-  boot.initrd.optimizeUnits = true;
   boot.initrd.includeDefaultModules = false;
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
