@@ -14,5 +14,8 @@
     enable = true;
     pkiBundle = "/var/lib/sbctl";
     configurationLimit = 5;
+    settings = {
+     consoleMode = "max";
+    };
   };
 }
