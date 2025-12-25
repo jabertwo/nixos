@@ -31,6 +31,8 @@
     whois
     bind
     usbutils
+    ansible
+    ansible-lint
   ];
 
   # Enable sound with pipewire.
