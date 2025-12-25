@@ -11,7 +11,6 @@ in
     gnused
     coreutils
     git
-    bash
   ];
 
   programs.tmux = {
