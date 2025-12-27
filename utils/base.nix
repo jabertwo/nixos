@@ -33,6 +33,7 @@
     usbutils
     ansible
     ansible-lint
+    mtr
   ];
 
   # Enable sound with pipewire.

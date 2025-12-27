@@ -3,6 +3,7 @@
   imports = [
     ../programs/gnome-settings.nix
     ../programs/zsh.nix
+    ../programs/prusa-slicer.nix
   ];
 
   environment.systemPackages = [
