@@ -9,8 +9,12 @@
   services.gnome.games.enable = false;
   services.gnome.core-apps.enable = false;
   services.gnome.gcr-ssh-agent.enable = false;
-  environment.gnome.excludePackages =
-    (with pkgs; [ gnome-tour ]);
+  services.gnome.gnome-keyring = pkgs.lib.mkForce { enable = false; };
+  environment.gnome.excludePackages = (
+    with pkgs; [
+      gnome-tour
+    ]
+  );
     
   # Install needed programs
   environment.systemPackages = [
