@@ -4,6 +4,7 @@
     ../programs/gnome-settings.nix
     ../programs/zsh.nix
     ../programs/prusa-slicer.nix
+    ../programs/quicksync.nix
   ];
 
   environment.systemPackages = [
@@ -13,7 +14,7 @@
   users.users.jabertwo = {
     isNormalUser = true;
     description = "jabertwo";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "dialout" "bluetooth" ];
     shell = pkgs.zsh;
   };
 

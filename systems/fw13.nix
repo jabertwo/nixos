@@ -19,6 +19,8 @@
   environment.systemPackages = with pkgs; [
     tpm2-tss
   ];
+  
+  environment.etc.hosts.mode = "0700";
 
   # Enable fingerint support
   services.fprintd.enable = true;
