@@ -9,6 +9,7 @@
 
   environment.systemPackages = [
     pkgs.telegram-desktop
+    pkgs.fractal
   ];
 
   users.users.jabertwo = {
@@ -51,9 +52,7 @@
         };
       };
     };
-    programs.element-desktop = {
-      enable = true;
-    };
+
   };
 
   # Make vim the default editor
