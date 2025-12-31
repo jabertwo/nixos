@@ -28,8 +28,6 @@
     ];
     home.stateVersion = "25.11";
     home.packages = [
-      pkgs.gnomeExtensions.ddterm
-      pkgs.gnomeExtensions.dash-to-dock
       pkgs.vscodium
     ];
     programs.git = {

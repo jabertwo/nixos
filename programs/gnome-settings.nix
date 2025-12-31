@@ -1,6 +1,11 @@
 { pkgs, ... }:
 {
   home-manager.users.jabertwo = {
+    home.packages = [
+      pkgs.gnomeExtensions.ddterm
+      pkgs.gnomeExtensions.dash-to-dock
+      pkgs.gnomeExtensions.clipboard-indicator
+      ];
     dconf = {
       enable = true;
       settings = {
@@ -9,6 +14,7 @@
           enabled-extensions = with pkgs.gnomeExtensions; [
             ddterm.extensionUuid
             dash-to-dock.extensionUuid
+            clipboard-indicator.extensionUuid
           ];
         };
         "org/gnome/desktop/wm/preferences" = {
@@ -68,6 +74,19 @@
           hot-keys = false;
           preferred-monitor = -2;
           preferred-monitor-by-connector = "eDP-1";
+        };
+        "org/gnome/shell/extensions/clipboard-indicator" = {
+          case-sensitive-search = true;
+          clear-history = [];
+          clear-on-boot = true;
+          display-mode = 0;
+          move-item-first = true;
+          next-entry = [];
+          prev-entry = [];
+          private-mode-binding = [];
+          strip-text = true;
+          toggle-menu = ["<Super>v"];
+          topbar-preview-size = 10;
         };
         "org/gnome/desktop/wm/keybindings" = {
           activate-window-menu = [];
