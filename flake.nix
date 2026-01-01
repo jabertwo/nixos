@@ -35,7 +35,7 @@
           ./utils/silentboot.nix
           ./utils/secureboot.nix
           ./utils/yubikey.nix
-          ./utils/gnome.nix
+          ./programs/gnome/gnome.nix
 
           ./users/jabertwo.nix
 
@@ -55,7 +55,7 @@
           ./systems/zen.nix
           ./utils/base.nix
           ./utils/yubikey.nix
-          ./utils/gnome.nix
+          ./programs/gnome/gnome.nix
 
           ./users/jabertwo.nix
 
