@@ -36,6 +36,7 @@
     mtr
     htop
     devenv
+    plocate
   ];
 
   # Enable caching for devenv
@@ -54,6 +55,9 @@
     pulse.enable = true;
   };
 
+  # Enable locate
+  services.locate.enable = true;
+  
   # Install firefox.
   programs.firefox.enable = true;
 
