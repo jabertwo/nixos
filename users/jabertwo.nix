@@ -1,15 +1,15 @@
 { config, pkgs, ... }:
 {
   imports = [
-    ../programs/gnome-settings.nix
+    ../programs/gnome-settings/gnome-settings.nix
     ../programs/zsh.nix
     ../programs/prusa-slicer.nix
     ../programs/quicksync.nix
   ];
 
-  environment.systemPackages = [
-    pkgs.telegram-desktop
-    pkgs.fractal
+  environment.systemPackages = with pkgs; [
+    telegram-desktop
+    fractal
   ];
 
   users.users.jabertwo = {
