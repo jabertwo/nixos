@@ -23,6 +23,10 @@
         "org/gnome/desktop/interface" = {
           color-scheme = "prefer-dark";
         };
+        "org/gnome/desktop/peripherals" = {
+          click-method = "areas";
+          two-finger-scrolling-enabled = true;
+        };
         "org/gnome/settings-daemon/housekeeping" = {
           donation-reminder-enabled = false;
         };
