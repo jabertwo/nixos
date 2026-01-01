@@ -5,7 +5,7 @@
       pkgs.gnomeExtensions.ddterm
       pkgs.gnomeExtensions.dash-to-dock
       pkgs.gnomeExtensions.clipboard-indicator
-      ];
+    ];
     dconf = {
       enable = true;
       settings = {
