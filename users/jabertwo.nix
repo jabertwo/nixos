@@ -24,7 +24,8 @@
   home-manager.users.jabertwo = { pkgs, ...}: {
     imports = [ 
       ../programs/tmux/tmux.nix
-      ../programs/ssh-jabertwo.nix
+      ../ssh-configs/ssh-jabertwo.nix
+      ../ssh-configs/ssh-warpzone.nix
     ];
     home.stateVersion = "25.11";
     home.packages = [
