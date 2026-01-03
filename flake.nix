@@ -33,7 +33,6 @@
           ./utils/base.nix
           ./utils/secureboot.nix
           ./utils/silentboot.nix
-          ./utils/secureboot.nix
           ./utils/yubikey.nix
           ./programs/gnome/gnome.nix
 
@@ -54,6 +53,8 @@
           ./systems/zen-hardware.nix
           ./systems/zen.nix
           ./utils/base.nix
+          ./utils/secureboot.nix
+          ./utils/silentboot.nix
           ./utils/yubikey.nix
           ./programs/gnome/gnome.nix
 

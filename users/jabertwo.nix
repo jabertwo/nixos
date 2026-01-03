@@ -1,10 +1,9 @@
 { config, pkgs, ... }:
 {
   imports = [
-    ../programs/gnome/gnome-settings.nix
     ../programs/zsh.nix
     ../programs/prusa-slicer.nix
-    ../programs/quicksync.nix
+    # ../programs/quicksync.nix
   ];
 
   environment.systemPackages = with pkgs; [
@@ -15,14 +14,15 @@
   users.users.jabertwo = {
     isNormalUser = true;
     description = "jabertwo";
-    extraGroups = [ "networkmanager" "wheel" "dialout" "bluetooth" ];
+    extraGroups = [ "networkmanager" "wheel" "dialout" ];
     shell = pkgs.zsh;
   };
 
   programs.zsh.enable = true;
 
   home-manager.users.jabertwo = { pkgs, ...}: {
-    imports = [ 
+    imports = [
+      ../programs/gnome/gnome-settings.nix
       ../programs/tmux/tmux.nix
       ../ssh-configs/ssh-jabertwo.nix
       ../ssh-configs/ssh-warpzone.nix
@@ -30,6 +30,8 @@
     home.stateVersion = "25.11";
     home.packages = [
       pkgs.vscodium
+      pkgs.speedtest-cli
+      pkgs.prusa-slicer
     ];
     programs.git = {
       enable = true;

@@ -1,7 +1,6 @@
 { config, lib, pkgs, ... }:
 
 {
-
   programs.steam = {
     enable = true;
     remotePlay.openFirewall = false; # Open ports in the firewall for Steam Remote Play
@@ -12,16 +11,10 @@
   };
 
   environment.systemPackages = with pkgs; [
-
     steam
     protonplus
     protonup-qt
     protontricks
     winetricks
-
   ];
-  home-manager.users.jabertwo = {
-    # We move the discord and element settings here
-    programs.discord.enable = true;
-  };
 }
