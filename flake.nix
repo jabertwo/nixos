@@ -37,6 +37,7 @@
           ./programs/gnome/gnome.nix
 
           ./users/jabertwo.nix
+          ./users/dpsg.nix
 
           home-manager.nixosModules.home-manager
           {
