@@ -48,7 +48,7 @@
         ];
         userSettings = {
           "editor.fontSize" = 14;
-          "terminal.integrated.defaultProfile.linux" = "bash";
+          "terminal.integrated.defaultProfile.linux" = "zsh";
         };
       };
     };
