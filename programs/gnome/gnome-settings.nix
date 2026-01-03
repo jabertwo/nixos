@@ -15,6 +15,10 @@
           dash-to-dock.extensionUuid
           clipboard-indicator.extensionUuid
         ];
+        favorite-apps = [
+          "firefox.desktop"
+          "org.gnome.Nautilus.desktop"
+        ];
       };
       "org/gnome/desktop/wm/preferences" = {
         "button-layout" = ":minimize,maximize,close";

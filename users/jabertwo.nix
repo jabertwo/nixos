@@ -1,7 +1,6 @@
 { config, pkgs, ... }:
 {
   imports = [
-    ../programs/zsh.nix
     # ../programs/quicksync.nix
   ];
 
@@ -23,6 +22,7 @@
     imports = [
       ../programs/gnome/gnome-settings.nix
       ../programs/tmux/tmux.nix
+      ../programs/zsh.nix
       ../ssh-configs/ssh-jabertwo.nix
       ../ssh-configs/ssh-warpzone.nix
     ];
