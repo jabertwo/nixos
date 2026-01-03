@@ -2,10 +2,6 @@
 {
   imports = [
     ../programs/zsh.nix
-<<<<<<< HEAD
-    ../programs/prusa-slicer.nix
-=======
->>>>>>> d930189 (clean up)
     # ../programs/quicksync.nix
   ];
 
