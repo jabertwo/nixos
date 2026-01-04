@@ -14,6 +14,12 @@
       gnome-tour
     ]
   );
+
+  # enable fractional scaling
+  services.desktopManager.gnome.extraGSettingsOverrides = ''
+    [org.gnome.mutter]
+    experimental-features=['scale-monitor-framebuffer', 'xwayland-native-scaling']
+  '';
     
   # Install needed programs
   environment.systemPackages = [
