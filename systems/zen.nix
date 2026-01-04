@@ -16,6 +16,10 @@
 
   networking.hostName = "jabertwo-zen";
 
+  environment.systemPackages = with pkgs; [
+    tpm2-tss
+  ];
+
   # Enable fingerint support
   services.fprintd.enable = false;
 
