@@ -31,6 +31,7 @@
       pkgs.vscodium
       pkgs.speedtest-cli
       pkgs.prusa-slicer
+      pkgs.libreoffice
     ];
     programs.git = {
       enable = true;
