@@ -14,6 +14,7 @@
     description = "jabertwo";
     extraGroups = [ "networkmanager" "wheel" "dialout" ];
     shell = pkgs.zsh;
+    initialHashedPassword = "$y$j9T$Fpp709QJcNsbgIC/jm9Wl.$/HhQKzTLuYp94fm3JiOBLWscbG7vn2cu.HRlsIIxrl9";
   };
 
   programs.zsh.enable = true;
