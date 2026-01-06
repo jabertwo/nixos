@@ -2,6 +2,7 @@
 {
   imports = [
     # ../programs/quicksync.nix
+    #../programs/netbird.nix
   ];
 
   environment.systemPackages = with pkgs; [
