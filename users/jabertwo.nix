@@ -3,6 +3,7 @@
   imports = [
     # ../programs/quicksync.nix
     ../programs/netbird.nix
+    ../programs/logiops.nix
   ];
 
   environment.systemPackages = with pkgs; [
