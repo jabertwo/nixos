@@ -4,7 +4,7 @@
     # ../programs/quicksync.nix
     ../programs/netbird.nix
     ../programs/logiops.nix
-    ../programs/forticlient.nix
+    # ../programs/forticlient.nix
   ];
 
   environment.systemPackages = with pkgs; [
