@@ -9,7 +9,11 @@
   environment.systemPackages = with pkgs; [
     telegram-desktop
     fractal
+    flatpak
+    gnome-software
   ];
+
+  services.flatpak.enable = true;
 
   users.users.jabertwo = {
     isNormalUser = true;
