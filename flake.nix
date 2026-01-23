@@ -71,6 +71,29 @@
 
         ];
       };
+      jberges-5330 = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs nixos-hardware; };
+        system = "x86_64-linux";
+        modules = [
+          ./systems/jberges-5330-hardware.nix
+          ./systems/jberges-5330.nix
+          ./utils/base.nix
+          #./utils/secureboot.nix
+          #./utils/silentboot.nix
+          ./utils/yubikey.nix
+          ./programs/gnome/gnome.nix
+
+          ./users/jberges.nix
+
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+          }
+
+        ];
+      };
+ 
     };
   };
 }
