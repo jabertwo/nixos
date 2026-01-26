@@ -21,6 +21,7 @@
 
   environment.systemPackages = with pkgs; [
     tpm2-tss
+    canon-cups-ufr2
   ];
   
   environment.etc.hosts.mode = "0700";
