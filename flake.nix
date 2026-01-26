@@ -83,6 +83,7 @@
           ./utils/yubikey.nix
           ./utils/wd-smb.nix
           ./programs/gnome/gnome.nix
+          ./programs/docker.nix
 
           ./users/jberges.nix
 
