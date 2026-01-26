@@ -8,13 +8,13 @@
   ];
 
   # Use Systemd-Boot
-  boot.loader.systemd-boot = { 
-    enable = true;
-    editor = false;
-    consoleMode = "max";
-  };
+  # boot.loader.systemd-boot = { 
+  #  enable = true;
+  #  editor = false;
+  #  consoleMode = "max";
+  # };
 
-  # Bootloader Settimgs
+  # Bootloader Settings
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "jberges-5330";

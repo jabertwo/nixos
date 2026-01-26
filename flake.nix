@@ -78,9 +78,10 @@
           ./systems/jberges-5330-hardware.nix
           ./systems/jberges-5330.nix
           ./utils/base.nix
-          #./utils/secureboot.nix
-          #./utils/silentboot.nix
+          ./utils/secureboot.nix
+          ./utils/silentboot.nix
           ./utils/yubikey.nix
+          ./utils/wd-smb.nix
           ./programs/gnome/gnome.nix
 
           ./users/jberges.nix
