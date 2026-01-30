@@ -30,12 +30,12 @@
   environment.etc.hosts.mode = "0700";
 
   # Enable fingerint support
-  # services.fprintd = {
-  #   enable = true;
-  #   package = pkgs.fprintd-tod;
-  #   tod.enable = true;
-  #   tod.driver = pkgs.libfprint-2-tod1-broadcom;
-  # };
+  services.fprintd = {
+    enable = true;
+    package = pkgs.fprintd-tod;
+    tod.enable = true;
+    tod.driver = pkgs.libfprint-2-tod1-broadcom;
+  };
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
