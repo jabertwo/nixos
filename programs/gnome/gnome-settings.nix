@@ -136,6 +136,9 @@
         toggle-maximized = [];
         unmaximize = [];
       };
+      "org/gnome/desktop/input-sources" = {
+        xkb-options=["kpdl:dot"];
+      };
       "org/gnome/settings-daemon/plugins/media-keys" = {
         control-center = ["<Super>i"];
         help = [];
