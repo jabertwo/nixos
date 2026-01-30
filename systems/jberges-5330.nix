@@ -18,6 +18,9 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "jberges-5330";
+  networking.networkmanager.plugins = with pkgs; [ 
+    networkmanager-fortisslvpn 
+  ];
 
   environment.systemPackages = with pkgs; [
     tpm2-tss
