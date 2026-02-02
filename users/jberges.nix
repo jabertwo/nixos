@@ -35,7 +35,7 @@
       inetutils
       telegram-desktop
       fractal
-      teams
+      teams-for-linux
     ];
     programs.git = {
       enable = true;

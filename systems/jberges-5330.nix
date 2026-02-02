@@ -37,9 +37,6 @@
     tod.driver = pkgs.libfprint-2-tod1-broadcom;
   };
 
-  # Allow installing unsupported packages
-  nixpkgs.config.allowUnsupportedSystem = true;
-
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
