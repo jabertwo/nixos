@@ -5,8 +5,7 @@
   ];
 
   environment.systemPackages = with pkgs; [
-    telegram-desktop
-    fractal
+
   ];
 
   users.users.jberges = {
@@ -28,10 +27,14 @@
       ../ssh-configs/ssh-warpzone.nix
     ];
     home.stateVersion = "25.11";
-    home.packages = [
-      pkgs.vscodium
-      pkgs.speedtest-cli
-      pkgs.libreoffice
+    home.packages = with pkgs; [
+      vscodium
+      speedtest-cli
+      libreoffice
+      adoptopenjdk-icedtea-web
+      inetutils
+      telegram-desktop
+      fractal
     ];
     programs.git = {
       enable = true;
