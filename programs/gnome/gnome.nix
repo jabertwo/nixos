@@ -26,6 +26,7 @@
     pkgs.nautilus
     pkgs.gnome-terminal
     pkgs.gnome-text-editor
+    pkgs.gnome-firmware
   ];
  
   # Configure keymap in X11
