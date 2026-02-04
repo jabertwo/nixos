@@ -9,45 +9,25 @@
     ];
 
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "thunderbolt" "usb_storage" "sd_mod" ];
-  boot.initrd.kernelModules = [ "dm-snapshot" "amdgpu" ];
-  boot.initrd.luks.devices = {
-    luksroot = {
-      device = "/dev/disk/by-uuid/6ecbb1b9-876e-43d7-bbd4-35173b0800a0";
-      preLVM = true;
-      allowDiscards = true;
-    };
-  };
-  boot.initrd.systemd.enable = true;
-  boot.initrd.includeDefaultModules = false;
+  boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/mapper/vg-root";
-      fsType = "btrfs";
-      options = [ "subvol=root" "compress=zstd" ];
+    { device = "/dev/mapper/luks-5b9718c6-95c6-48d1-868c-5ef1135b2b53";
+      fsType = "ext4";
     };
 
-  fileSystems."/home" =
-    { device = "/dev/mapper/vg-root";
-      fsType = "btrfs";
-      options = [ "subvol=home" "compress=zstd" ];
-    };
-
-  fileSystems."/nix" =
-    { device = "/dev/mapper/vg-root";
-      fsType = "btrfs";
-      options = [ "subvol=nix" "compress=zstd" "noatime" ];
-    };
+  boot.initrd.luks.devices."luks-5b9718c6-95c6-48d1-868c-5ef1135b2b53".device = "/dev/disk/by-uuid/5b9718c6-95c6-48d1-868c-5ef1135b2b53";
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/54CA-A672";
+    { device = "/dev/disk/by-uuid/8F32-C384";
       fsType = "vfat";
       options = [ "fmask=0077" "dmask=0077" ];
     };
 
   swapDevices =
-    [ { device = "/dev/mapper/vg-swap"; }
+    [ { device = "/dev/mapper/luks-95293c0e-1a23-4e4b-b6f0-ad52fa2b6060"; }
     ];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";

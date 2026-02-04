@@ -32,7 +32,7 @@
           ./systems/fw13.nix
           ./utils/base.nix
           ./utils/secureboot.nix
-          ./utils/silentboot.nix
+          # ./utils/silentboot.nix
           ./utils/yubikey.nix
           ./programs/gnome/gnome.nix
 
