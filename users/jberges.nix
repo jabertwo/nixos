@@ -36,6 +36,7 @@
       telegram-desktop
       fractal
       teams-for-linux
+      freecad
     ];
     programs.git = {
       enable = true;

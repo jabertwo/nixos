@@ -11,6 +11,7 @@
     telegram-desktop
     fractal
     flatpak
+    freecad
     gnome-software
     nettools
   ];
