@@ -35,6 +35,8 @@
     htop
     devenv
     plocate
+    nmap
+    inetutils
   ];
 
   # Enable caching for devenv

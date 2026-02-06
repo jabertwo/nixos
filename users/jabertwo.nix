@@ -13,7 +13,6 @@
     flatpak
     freecad
     gnome-software
-    nettools
   ];
 
   services.flatpak.enable = true;

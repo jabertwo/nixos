@@ -32,7 +32,6 @@
       speedtest-cli
       libreoffice
       adoptopenjdk-icedtea-web
-      inetutils
       telegram-desktop
       fractal
       teams-for-linux
