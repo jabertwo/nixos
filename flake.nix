@@ -79,6 +79,7 @@
           ./systems/jberges-5330.nix
           ./utils/base.nix
           ./utils/secureboot.nix
+          ./utils/tpm-unlock.nix
           ./utils/silentboot.nix
           ./utils/yubikey.nix
           ./utils/wd-smb.nix

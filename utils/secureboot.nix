@@ -8,6 +8,7 @@
     sbctl
   ];
 
+  boot.bootspec.enable = true;
   boot.loader.systemd-boot.enable = lib.mkForce false;
   boot.loader.timeout = 1;
   boot.lanzaboote = {
