@@ -37,7 +37,7 @@
       fractal
       teams-for-linux
       freecad
-      navicat-premium
+      dbeaver-bin
     ];
     programs.git = {
       enable = true;
