@@ -81,6 +81,9 @@
 
   # Configure console keymap
   console.keyMap = "de";
+
+  # Immutable users, only keep users specifically configured
+  users.mutableUsers = false;
   
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
