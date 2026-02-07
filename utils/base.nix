@@ -2,6 +2,8 @@
 {
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
+  
+  boot.kernel.sysctl."kernel.sysrq" = 502;
 
   # Garbage collection 
   nix.settings.auto-optimise-store = true;
