@@ -32,6 +32,7 @@
           ./systems/fw13.nix
           ./utils/base.nix
           ./utils/secureboot.nix
+          ./utils/tpm-unlock.nix
           ./utils/silentboot.nix
           ./utils/yubikey.nix
           ./programs/gnome/gnome.nix
