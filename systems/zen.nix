@@ -9,11 +9,7 @@
     editor = false;
     consoleMode = "max";
   };
-
-  # Silent boot
-  boot.consoleLogLevel = 3;
-  boot.plymouth.enable = true;
-
+  
   networking.hostName = "jabertwo-zen";
 
   environment.systemPackages = with pkgs; [
