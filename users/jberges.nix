@@ -37,6 +37,7 @@
       teams-for-linux
       freecad
       dbeaver-bin
+      remmina
     ];
     programs.git = {
       enable = true;
