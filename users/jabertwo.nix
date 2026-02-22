@@ -42,6 +42,7 @@
       pkgs.speedtest-cli
       pkgs.prusa-slicer
       pkgs.libreoffice
+      pkgs.thunderbird
     ];
     programs.git = {
       enable = true;
