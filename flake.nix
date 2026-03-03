@@ -85,7 +85,7 @@
           ./utils/wd-smb.nix
           ./programs/gnome/gnome.nix
           ./programs/docker.nix
-          ./programs/tftp.nix
+          #./programs/tftp.nix
 
           ./users/jberges.nix
 
