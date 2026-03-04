@@ -17,6 +17,8 @@
   # Bootloader Settings
   boot.loader.efi.canTouchEfiVariables = true;
 
+  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
+
   networking.hostName = "jberges-5330";
   networking.networkmanager.plugins = with pkgs; [ 
     networkmanager-fortisslvpn 
