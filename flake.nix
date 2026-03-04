@@ -97,7 +97,24 @@
 
         ];
       };
- 
+      jberges-rpi4 = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs nixos-hardware; };
+        system = "aarch64-linux"; 
+        modules = [
+          nixos-hardware.nixosModules.raspberry-pi-4
+          ./systems/jberges-rpi4-hardware.nix
+          ./systems/jberges-rpi4.nix
+          ./utils/base.nix
+          ./utils/ssh-server.nix
+          ./users/jberges-rpi4.nix
+
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+          }
+        ];
+      };
     };
   };
 }
