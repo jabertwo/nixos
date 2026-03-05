@@ -26,7 +26,8 @@
   };
 
   programs.zsh.enable = true;
-
+  programs.firefox.enable = true;
+  
   home-manager.users.jabertwo = { pkgs, ...}: {
     imports = [
       ../programs/gnome/gnome-settings.nix

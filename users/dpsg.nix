@@ -9,6 +9,7 @@
   };
 
   programs.zsh.enable = true;
+  programs.firefox.enable = true;
 
   home-manager.users.dpsg = { pkgs, ...}: {
     imports = [

@@ -15,8 +15,9 @@
     shell = pkgs.zsh;
     initialHashedPassword = "$y$j9T$ULBqWjxo/xCsHsvRT2Q1C0$ss5IiThBxWa.YYk4qMAu/pEyq.DT4DY27phKC6LmGc7";
   };
-
+  
   programs.zsh.enable = true;
+  programs.firefox.enable = true;
 
   home-manager.users.jberges = { pkgs, ...}: {
     imports = [

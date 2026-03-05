@@ -16,7 +16,7 @@
   };
 
   programs.zsh.enable = true;
-
+  
   home-manager.users.jberges = { pkgs, ...}: {
     imports = [
       ../programs/zsh.nix

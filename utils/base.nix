@@ -60,9 +60,6 @@
   # Enable locate
   services.locate.enable = true;
   
-  # Install firefox.
-  programs.firefox.enable = true;
-
   # Set your time zone.
   time.timeZone = "Europe/Berlin";
 
