@@ -15,6 +15,13 @@
     ];
   };
 
+  security.sudo.extraRules = [
+    {
+      users = [ "jberges" ];
+      commands = [ { command = "ALL"; options = [ "NOPASSWD" ]; } ];
+    }
+  ];
+
   programs.zsh.enable = true;
   
   home-manager.users.jberges = { pkgs, ...}: {
