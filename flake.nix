@@ -105,7 +105,6 @@
           ./systems/jberges-rpi4-hardware.nix
           ./systems/jberges-rpi4.nix
           ./utils/base.nix
-          ./utils/rpi-fancontrol.nix
           ./utils/ssh-server.nix
           ./users/jberges-rpi4.nix
 
