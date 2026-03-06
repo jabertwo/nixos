@@ -1,4 +1,5 @@
 { conf,pkgs, ... }:
+{ conf,pkgs, ... }:
 {
     # --- VLAN 555 Configuration ---
   
@@ -73,7 +74,7 @@
     
     script = ''
       ${pkgs.python3}/bin/python3 -c '
-      import csv, http.server, socketserver
+      import csv, http.server, socketserver, datetime
       
       html = """
       <html><head>
@@ -86,7 +87,7 @@
         </style>
       </head><body>
       <h2>Active DHCP Leases (VLAN 555)</h2>
-      <table><tr><th>IP Address</th><th>MAC Address</th><th>Hostname</th><th>Expires (Unix Time)</th></tr>
+      <table><tr><th>IP Address</th><th>MAC Address</th><th>Hostname</th><th>Expires (Local Time)</th></tr>
       {rows}
       </table></body></html>
       """
@@ -96,22 +97,42 @@
               self.send_response(200)
               self.send_header("Content-type", "text/html")
               self.end_headers()
-              rows = ""
+              
+              leases = {}
               try:
                   with open("/var/lib/kea/dhcp4.leases", "r") as f:
-                      # Skip the header row
                       reader = csv.reader(f)
-                      next(reader, None) 
+                      next(reader, None) # Skip the header
                       for row in reader:
-                          # address, hwaddr, client_id, valid_lifetime, expire, subnet_id, fqdn_fwd, fqdn_rev, hostname, state, user_context
-                          if len(row) >= 9:
-                              rows += f"<tr><td>{row[0]}</td><td>{row[1]}</td><td>{row[8]}</td><td>{row[4]}</td></tr>"
+                          if len(row) >= 10:
+                              # Kea appends updates, so dict assignment naturally keeps only the latest state
+                              leases[row[0]] = row
+                              
+                  rows = ""
+                  for ip, row in leases.items():
+                      state = row[9]
+                      # State 0 means the lease is currently active. 
+                      # (We ignore state 1/2 which are declined/released)
+                      if state == "0":
+                          mac = row[1]
+                          hostname = row[8] if row[8] else "<i>Unknown</i>"
+                          
+                          # Convert Unix timestamp to local time
+                          expire_ts = int(row[4])
+                          expire_time = datetime.datetime.fromtimestamp(expire_ts).strftime("%Y-%m-%d %H:%M:%S")
+                          
+                          rows += f"<tr><td>{ip}</td><td>{mac}</td><td>{hostname}</td><td>{expire_time}</td></tr>"
+                          
               except Exception as e:
                   rows = f"<tr><td colspan=\"4\">Could not read leases: {e}</td></tr>"
               
               self.wfile.write(html.replace("{rows}", rows).encode("utf-8"))
       
-      with socketserver.TCPServer(("", 8080), Handler) as httpd:
+      # We allow reuse of the address so the service restarts cleanly
+      class ReusableTCPServer(socketserver.TCPServer):
+          allow_reuse_address = True
+
+      with ReusableTCPServer(("", 8080), Handler) as httpd:
           print("Serving Kea leases on port 8080")
           httpd.serve_forever()
       '
