@@ -107,6 +107,8 @@
           ./utils/base.nix
           ./utils/ssh-server.nix
           ./users/jberges-rpi4.nix
+          ./programs/kea-rpi.nix
+          ./programs/nat-rpi.nix
 
           home-manager.nixosModules.home-manager
           {
