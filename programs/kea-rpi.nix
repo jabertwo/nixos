@@ -1,5 +1,4 @@
 { conf,pkgs, ... }:
-{ conf,pkgs, ... }:
 {
     # --- VLAN 555 Configuration ---
   
