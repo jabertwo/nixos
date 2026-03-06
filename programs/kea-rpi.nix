@@ -1,4 +1,4 @@
-{ conf, ... }:
+{ conf,pkgs, ... }:
 {
     # --- VLAN 555 Configuration ---
   
@@ -56,5 +56,65 @@
         }
       ];
     };
+  };
+
+  # --- Simple Kea Lease Web Viewer ---
+
+  # 1. Open port 8080 on the internal VLAN
+  networking.firewall.interfaces."vlan555".allowedTCPPorts = [ 8080 ];
+  # (Also open it on end0 if you want to access it from VLAN 210)
+  networking.firewall.interfaces."end0".allowedTCPPorts = [ 8080 ];
+
+  # 2. Create the micro web-server service
+  systemd.services.kea-lease-viewer = {
+    description = "Simple Web UI for Kea DHCP Leases";
+    wantedBy = [ "multi-user.target" ];
+    after = [ "network.target" "kea-dhcp4-server.service" ];
+    
+    script = ''
+      ${pkgs.python3}/bin/python3 -c '
+      import csv, http.server, socketserver
+      
+      html = """
+      <html><head>
+        <title>Kea DHCP Leases</title>
+        <style>
+          body { font-family: sans-serif; background: #1e1e2e; color: #cdd6f4; padding: 20px; }
+          table { width: 100%; border-collapse: collapse; margin-top: 20px; background: #181825; }
+          th, td { border: 1px solid #45475a; padding: 12px; text-align: left; }
+          th { background: #313244; color: #89b4fa; }
+        </style>
+      </head><body>
+      <h2>Active DHCP Leases (VLAN 555)</h2>
+      <table><tr><th>IP Address</th><th>MAC Address</th><th>Hostname</th><th>Expires (Unix Time)</th></tr>
+      {rows}
+      </table></body></html>
+      """
+      
+      class Handler(http.server.SimpleHTTPRequestHandler):
+          def do_GET(self):
+              self.send_response(200)
+              self.send_header("Content-type", "text/html")
+              self.end_headers()
+              rows = ""
+              try:
+                  with open("/var/lib/kea/dhcp4.leases", "r") as f:
+                      # Skip the header row
+                      reader = csv.reader(f)
+                      next(reader, None) 
+                      for row in reader:
+                          # address, hwaddr, client_id, valid_lifetime, expire, subnet_id, fqdn_fwd, fqdn_rev, hostname, state, user_context
+                          if len(row) >= 9:
+                              rows += f"<tr><td>{row[0]}</td><td>{row[1]}</td><td>{row[8]}</td><td>{row[4]}</td></tr>"
+              except Exception as e:
+                  rows = f"<tr><td colspan=\"4\">Could not read leases: {e}</td></tr>"
+              
+              self.wfile.write(html.replace("{rows}", rows).encode("utf-8"))
+      
+      with socketserver.TCPServer(("", 8080), Handler) as httpd:
+          print("Serving Kea leases on port 8080")
+          httpd.serve_forever()
+      '
+    '';
   };
 }
