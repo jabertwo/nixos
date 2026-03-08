@@ -1,9 +1,5 @@
 { config, pkgs, ... }:
 {
-  imports = [
-    ../programs/logiops.nix
-  ];
-
   environment.systemPackages = with pkgs; [
 
   ];

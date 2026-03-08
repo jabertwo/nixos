@@ -36,6 +36,7 @@
           ./utils/silentboot.nix
           ./utils/yubikey.nix
           ./programs/gnome/gnome.nix
+          ./programs/logiops.nix
 
           ./users/jabertwo.nix
 
@@ -58,6 +59,7 @@
           ./utils/silentboot.nix
           ./utils/yubikey.nix
           ./programs/gnome/gnome.nix
+          ./programs/logiops.nix
 
           ./users/jabertwo.nix
 
@@ -85,6 +87,7 @@
           ./utils/wd-smb.nix
           ./programs/gnome/gnome.nix
           ./programs/docker.nix
+          ./programs/logiops.nix
           #./programs/tftp.nix
 
           ./users/jberges.nix
