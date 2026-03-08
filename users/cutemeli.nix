@@ -1,13 +1,5 @@
 { config, pkgs, ... }:
 {
-  environment.systemPackages = with pkgs; [
-    telegram-desktop
-    flatpak
-    gnome-software
-    spotify
-    heroic-unwrapped
-  ];
-
   services.flatpak.enable = true;
 
   users.users.cutemeli = {
@@ -28,12 +20,17 @@
       ../programs/zsh.nix
     ];
     home.stateVersion = "25.11";
-    home.packages = [
-      pkgs.vscodium
-      pkgs.speedtest-cli
-      pkgs.prusa-slicer
-      pkgs.libreoffice
-      pkgs.thunderbird
+    home.packages = with pkgs; [
+      vscodium
+      speedtest-cli
+      prusa-slicer
+      libreoffice
+      thunderbird
+      spotify
+      heroic-unwrapped
+      telegram-desktop
+      flatpak
+      gnome-software
     ];
     programs.git = {
       enable = true;

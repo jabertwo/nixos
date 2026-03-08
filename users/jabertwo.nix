@@ -1,17 +1,7 @@
 { config, pkgs, ... }:
 {
   imports = [
-    # ../programs/quicksync.nix
     ../programs/netbird.nix
-    # ../programs/forticlient.nix
-  ];
-
-  environment.systemPackages = with pkgs; [
-    telegram-desktop
-    fractal
-    flatpak
-    freecad
-    gnome-software
   ];
 
   services.flatpak.enable = true;
@@ -36,12 +26,17 @@
       ../ssh-configs/ssh-warpzone.nix
     ];
     home.stateVersion = "25.11";
-    home.packages = [
-      pkgs.vscodium
-      pkgs.speedtest-cli
-      pkgs.prusa-slicer
-      pkgs.libreoffice
-      pkgs.thunderbird
+    home.packages = with pkgs; [
+      vscodium
+      speedtest-cli
+      prusa-slicer
+      libreoffice
+      thunderbird
+      telegram-desktop
+      fractal
+      flatpak
+      freecad
+      gnome-software
     ];
     programs.git = {
       enable = true;
@@ -63,7 +58,12 @@
         };
       };
     };
-
+    programs.discord = {
+      enable = true;
+      settings = {
+        SKIP_HOST_UPDATE = true;
+      };
+    };
   };
 
   # Make vim the default editor
