@@ -62,6 +62,7 @@
           ./programs/logiops.nix
 
           ./users/jabertwo.nix
+          ./users/cutemeli.nix
 
           ./programs/steam.nix
           
