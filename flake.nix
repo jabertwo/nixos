@@ -65,7 +65,7 @@
           ./users/cutemeli.nix
 
           ./programs/steam.nix
-          ,/programs/discord.nix
+          ./programs/discord.nix
           
           home-manager.nixosModules.home-manager
           {
