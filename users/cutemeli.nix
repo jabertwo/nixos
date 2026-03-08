@@ -4,6 +4,8 @@
     telegram-desktop
     flatpak
     gnome-software
+    spotify
+    heroic-unwrapped
   ];
 
   services.flatpak.enable = true;
