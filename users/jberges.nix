@@ -35,6 +35,7 @@
       freecad
       dbeaver-bin
       remmina
+      wireshark
     ];
     programs.git = {
       enable = true;
