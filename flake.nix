@@ -121,6 +121,31 @@
           }
         ];
       };
+      jberges-rpi4-image = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs nixos-hardware; };
+        system = "aarch64-linux"; 
+        modules = [
+          nixos-hardware.nixosModules.raspberry-pi-4
+          
+          # This module builds the actual .img file and handles partitions
+          "${nixpkgs}/nixos/modules/installer/sd-card/sd-image-aarch64.nix"
+          
+          { sdImage.firmwareSize = 2048; }
+
+          ./systems/jberges-rpi4.nix
+          ./utils/base.nix
+          ./utils/ssh-server.nix
+          ./users/jberges-rpi4.nix
+          ./programs/kea-rpi.nix
+          ./programs/nat-rpi.nix
+          
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+          }
+        ];
+      };
     };
   };
 }
