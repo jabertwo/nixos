@@ -27,7 +27,6 @@
       libreoffice
       thunderbird
       spotify
-      heroic-unwrapped
       telegram-desktop
       flatpak
       gnome-software

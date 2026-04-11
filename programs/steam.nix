@@ -16,5 +16,6 @@
     protonup-qt
     protontricks
     winetricks
+    heroic-unwrapped
   ];
 }
