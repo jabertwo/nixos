@@ -59,6 +59,7 @@
           ./utils/secureboot.nix
           ./utils/silentboot.nix
           ./utils/yubikey.nix
+          ./programs/docker.nix
           ./programs/gnome/gnome.nix
           ./programs/logiops.nix
 
