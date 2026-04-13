@@ -37,6 +37,24 @@
                 };
             }
         );
+    },
+    {
+        name: "Wireless Mouse MX Master 2s";
+        smartshift: { on: true; threshold: 30; };
+        hires_scroll: { hires: true; invert: false; target: false; };
+    
+        buttons: (
+            {
+                cid: 0xc3;
+                action = {
+                    type: "Gestures";
+                    gestures: (
+                        { direction: "Left"; mode: "OnRelease"; action = { type: "Keypress"; keys: ["KEY_LEFTCTRL", "KEY_LEFTMETA", "KEY_LEFT"]; }; },
+                        { direction: "Right"; mode: "OnRelease"; action = { type: "Keypress"; keys: ["KEY_LEFTCTRL", "KEY_LEFTMETA", "KEY_RIGHT"]; }; }
+                    );
+                };
+            }
+        );
     }
     );
   '';
