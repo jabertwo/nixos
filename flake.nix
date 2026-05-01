@@ -62,6 +62,7 @@
           ./programs/docker.nix
           ./programs/gnome/gnome.nix
           ./programs/logiops.nix
+          ./programs/openrgb.nix
 
           ./users/jabertwo.nix
           ./users/cutemeli.nix
