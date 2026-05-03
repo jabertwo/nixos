@@ -63,7 +63,7 @@
           ./programs/gnome/gnome.nix
           ./programs/logiops.nix
           ./programs/openrgb.nix
-
+          ./programs/piper.nix
           ./users/jabertwo.nix
           ./users/cutemeli.nix
 
