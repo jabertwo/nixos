@@ -60,6 +60,7 @@
           ./utils/base.nix
           ./utils/secureboot.nix
           ./utils/silentboot.nix
+          ./utils/ssh-server.nix
           ./utils/yubikey.nix
           ./programs/docker.nix
           ./programs/gnome/gnome.nix
