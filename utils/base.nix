@@ -39,6 +39,8 @@
     plocate
     nmap
     inetutils
+    tio
+    tmate
   ];
 
   # Enable caching for devenv
