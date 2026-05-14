@@ -38,6 +38,8 @@
           ./programs/docker.nix
           ./programs/gnome/gnome.nix
           ./programs/logiops.nix
+          ./programs/tio.nix
+          ./programs/tmate.nix
 
           ./users/jabertwo.nix
 
@@ -64,6 +66,8 @@
           ./programs/logiops.nix
           ./programs/openrgb.nix
           ./programs/piper.nix
+          ./programs/tio.nix
+          ./programs/tmate.nix
           ./users/jabertwo.nix
           ./users/cutemeli.nix
 
@@ -92,6 +96,8 @@
           ./programs/gnome/gnome.nix
           ./programs/docker.nix
           ./programs/logiops.nix
+          ./programs/tio.nix
+          ./programs/tmate.nix
           #./programs/tftp.nix
 
           ./users/jberges.nix
