@@ -45,9 +45,8 @@
         user.Email = "git@jabertwo.de";
       };
     };
-    programs.vscode = {
+    programs.vscodium = {
       enable = true;
-      package = pkgs.vscodium;
       profiles.default = {
         extensions = with pkgs.vscode-extensions; [
           bbenoist.nix         # Nix language support
