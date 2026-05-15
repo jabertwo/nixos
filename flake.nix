@@ -66,7 +66,6 @@
           ./programs/openrgb.nix
           ./programs/piper.nix
           ./users/jabertwo.nix
-          ./users/cutemeli.nix
 
           ./programs/steam.nix
           
