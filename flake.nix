@@ -31,10 +31,12 @@
           ./systems/fw13-hardware.nix
           ./systems/fw13.nix
           ./utils/base.nix
+          ./utils/network-tools.nix
           ./utils/secureboot.nix
           ./utils/tpm-unlock.nix
           ./utils/silentboot.nix
           ./utils/yubikey.nix
+          ./programs/ansible.nix
           ./programs/docker.nix
           ./programs/gnome/gnome.nix
           ./programs/logiops.nix
@@ -56,10 +58,12 @@
           ./systems/zen-hardware.nix
           ./systems/zen.nix
           ./utils/base.nix
+          ./utils/network-tools.nix
           ./utils/secureboot.nix
           ./utils/silentboot.nix
           ./utils/ssh-server.nix
           ./utils/yubikey.nix
+          ./programs/ansible.nix
           ./programs/docker.nix
           ./programs/gnome/gnome.nix
           ./programs/logiops.nix
@@ -84,11 +88,13 @@
           ./systems/jberges-5330-hardware.nix
           ./systems/jberges-5330.nix
           ./utils/base.nix
+          ./utils/network-tools.nix
           ./utils/secureboot.nix
           ./utils/tpm-unlock.nix
           ./utils/silentboot.nix
           ./utils/yubikey.nix
           ./utils/wd-smb.nix
+          ./programs/ansible.nix
           ./programs/gnome/gnome.nix
           ./programs/docker.nix
           ./programs/logiops.nix
