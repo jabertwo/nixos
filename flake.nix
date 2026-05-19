@@ -141,6 +141,7 @@
           
           { sdImage.firmwareSize = 2048; }
 
+          ./systems/jberges-rpi4-hardware.nix
           ./systems/jberges-rpi4.nix
           ./utils/base.nix
           ./utils/ssh-server.nix
