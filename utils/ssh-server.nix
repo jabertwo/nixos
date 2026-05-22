@@ -11,6 +11,9 @@
       
       # Prevent direct root logins
       PermitRootLogin = "no";
+      
+      # Allow Agent forwarding
+      AllowAgentForwarding = "yes";
     };
   };
 
