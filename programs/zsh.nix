@@ -4,7 +4,7 @@
     enable = true;
     shellAliases = {
       ll = "ls -l";
-      update = "sudo nixos-rebuild switch --flake .";
+      update = "systemd-inhibit --what=sleep sudo nixos-rebuild switch --flake .";
       upgrade = "nix flake update --commit-lock-file";
       ip="ip -c";
       ipa="ip -c -br a | grep -v UNKNOWN";
