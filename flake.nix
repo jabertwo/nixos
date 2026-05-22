@@ -66,6 +66,7 @@
           ./programs/ansible.nix
           ./programs/docker.nix
           ./programs/gnome/gnome.nix
+          ./programs/gnome/gnome-rdp.nix
           ./programs/logiops.nix
           ./programs/openrgb.nix
           ./programs/piper.nix
