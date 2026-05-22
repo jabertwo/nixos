@@ -10,6 +10,7 @@
 
   # 3. Optional: Open firewall ports for better peer-to-peer connectivity
   networking.firewall.allowedUDPPorts = [ 51820 ];
+  networking.firewall.trustedInterfaces = [ "wt0" ];
 
   # 4. Install the packages
   environment.systemPackages = with pkgs; [ 
