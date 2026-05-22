@@ -41,6 +41,7 @@
       flatpak
       freecad
       gnome-software
+      remmina
     ];
     programs.git = {
       enable = true;
