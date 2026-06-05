@@ -59,6 +59,7 @@
         userSettings = {
           "editor.fontSize" = 14;
           "terminal.integrated.defaultProfile.linux" = "zsh";
+          "window.autoDetectColorScheme" = true;
         };
       };
     };
