@@ -36,6 +36,7 @@
       dbeaver-bin
       remmina
       wireshark
+      chromium
     ];
     programs.git = {
       enable = true;
