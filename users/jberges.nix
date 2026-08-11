@@ -37,6 +37,7 @@
       remmina
       wireshark
       chromium
+      bambu-studio
     ];
     programs.git = {
       enable = true;
