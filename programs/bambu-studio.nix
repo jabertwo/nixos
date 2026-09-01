@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-    environment.systemPackages = [
-        pkgs.bambu-studio
-    ];
+  services.flatpak.packages = [
+    "com.bambulab.BambuStudio"
+  ];
 }
