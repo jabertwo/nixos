@@ -64,7 +64,6 @@
           ./utils/ssh-server.nix
           ./utils/yubikey.nix
           ./programs/ansible.nix
-          ./programs/bambu-studio.nix
           ./programs/docker.nix
           ./programs/gnome/gnome.nix
           ./programs/gnome/gnome-rdp.nix
