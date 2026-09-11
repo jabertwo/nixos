@@ -96,6 +96,7 @@
           ./utils/yubikey.nix
           ./utils/wd-smb.nix
           ./programs/ansible.nix
+          ./programs/bambu-studio-wifi.nix
           ./programs/gnome/gnome.nix
           ./programs/docker.nix
           ./programs/logiops.nix
