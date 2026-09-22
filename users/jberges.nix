@@ -32,7 +32,6 @@
       telegram-desktop
       fractal
       teams-for-linux
-      freecad
       dbeaver-bin
       remmina
       wireshark
