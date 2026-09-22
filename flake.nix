@@ -90,6 +90,7 @@
           ./systems/jberges-5330.nix
           ./utils/base.nix
           ./utils/network-tools.nix
+          ./utils/networkd-5330.nix
           ./utils/secureboot.nix
           ./utils/tpm-unlock.nix
           ./utils/silentboot.nix
