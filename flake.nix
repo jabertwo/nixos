@@ -10,6 +10,11 @@
     # hardware configuration
     nixos-hardware.url = "github:NixOS/nixos-hardware";
 
+    nix-darwin = {
+      url = "github:LnL7/nix-darwin";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     lanzaboote = {
       url = "github:nix-community/lanzaboote";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -21,7 +26,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, nixos-hardware, lanzaboote, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, nixos-hardware, lanzaboote, nix-darwin, ... }@inputs: {
     # Define a NixOS configuration named after your hostname
     nixosConfigurations = {
       jabertwo-fw13 = nixpkgs.lib.nixosSystem {
@@ -155,6 +160,20 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
+          }
+        ];
+      };
+    };
+    darwinConfigurations = {
+      jberges-mba = nix-darwin.lib.darwinSystem {
+        system = "aarch64-darwin";
+        modules = [
+          ./systems/jberges-mba.nix
+          home-manager.darwinModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.jberges = import ./users/jberges-macos.nix;
           }
         ];
       };
