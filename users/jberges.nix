@@ -36,6 +36,7 @@
       remmina
       wireshark
       chromium
+      tmate
     ];
     programs.git = {
       enable = true;
